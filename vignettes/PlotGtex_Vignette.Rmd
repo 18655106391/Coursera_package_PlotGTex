@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```{r, fig.height = 7, fig.width = 7}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(PlotGTex)
-genes <- rownames(se_escapee)
+genes <- rownames(expr_mat)
 
 # add annotation
 library("ensembldb")
@@ -28,6 +28,6 @@ titles <- genes_X[genes,"gene_name"]
 
 par(mfrow=c(12,2))
 for (i in 1:24){
-        plot_tissuesubtype_sex(se_escapee,genes[i],titles[i])
+        plot_tissuesubtype_sex(expr_mat,pheno,genes[i],titles[i])
 }
 ```
